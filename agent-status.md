@@ -103,7 +103,7 @@
 | Agent | Planned Tasks | Completed | In Progress | Blocked |
 |-------|---------------|-----------|-------------|---------|
 | Agent B | 4 | 2 | 1 | 0 |
-| Agent A | 0 | 0 | 1 | 0 |
+| Agent A | 0 | 1 | 0 | 0 |
 | Agent Test | 3 | 2 | 1 | 0 |
 
 ### Week 2 (Mar 13-20)
@@ -118,6 +118,8 @@
 ## Activity Log
 
 ### 2026-03-05
+- **23:40** - Agent A: Completed Issue #14, created PR #17 (document templates)
+- **23:35** - Agent A: Started working on Issue #14
 - **23:30** - PM: Created parallel task assignments (Issues #14, #15, #16) and metadata-spec.md
 - **23:20** - PM: Enhanced agent status update mechanism - now requires agents to update agent-status.md
 - **23:00** - PM: Agent B and Agent Test started, now active

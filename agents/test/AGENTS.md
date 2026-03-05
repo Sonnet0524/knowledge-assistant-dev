@@ -298,7 +298,8 @@ class TestTemplateEngine:
 - ✅ 提交报告后
 
 ### 更新方式
-在Issue或PR中评论状态：
+
+**方式1: 在Issue/PR中评论状态**
 ```
 Test Status Update:
 - Coverage: 85%
@@ -308,6 +309,48 @@ Test Status Update:
 - Issues Found: 2
 - Report: [link]
 ```
+
+**方式2: 更新dev仓库的agent-status.md（重要！）**
+```bash
+# 切换到dev仓库
+cd ../knowledge-assistant-dev
+
+# 更新agent-status.md中你的状态部分
+# 找到 "### Agent Test (Testing)" 部分
+# 更新以下字段:
+# - Status: 🟢 Active / 🟡 Idle / 🔴 Blocked
+# - Current Task: 当前任务描述
+# - Last Activity: YYYY-MM-DD HH:MM
+# - Last Commit: 最新commit hash (如果有)
+# - Blocked: Yes/No - 如果Yes，说明原因
+# - Next Action: 下一步计划
+
+# 提交状态更新
+git add agent-status.md
+git commit -m "chore(agent-test): update status - [简短描述]"
+git push origin main
+```
+
+**状态更新示例**:
+```markdown
+### Agent Test (Testing)
+| Field | Value |
+|-------|-------|
+| Status | 🟢 Active |
+| Current Task | Testing Agent B's metadata parser - Issue #7 |
+| Last Activity | 2026-03-05 23:15 |
+| Last Commit | N/A (test agent doesn't commit code) |
+| Assigned Issues | 2 (#9, #10) |
+| Completed Issues | 0 |
+| Blocked | No |
+| Next Action | Generate test report for metadata parser |
+```
+
+### 状态更新流程
+1. 开始测试 → 在Issue评论 + 更新agent-status.md
+2. 发现问题 → 在Issue评论 + 更新agent-status.md
+3. 完成测试 → 更新agent-status.md状态 + 更新Completed Issues
+4. 提交报告 → 更新agent-status.md状态为Idle
 
 ---
 

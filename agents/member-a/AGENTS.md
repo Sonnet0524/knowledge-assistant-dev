@@ -268,7 +268,8 @@ Issue: #A2"
 - ✅ 完成任务时
 
 ### 更新方式
-在主Issue或PR中评论状态：
+
+**方式1: 在Issue/PR中评论状态**
 ```
 Status Update:
 - Progress: 50%
@@ -276,6 +277,48 @@ Status Update:
 - Blockers: None
 - Next: Add unit tests
 ```
+
+**方式2: 更新dev仓库的agent-status.md（重要！）**
+```bash
+# 切换到dev仓库
+cd ../knowledge-assistant-dev
+
+# 更新agent-status.md中你的状态部分
+# 找到 "### Agent A (Template System)" 部分
+# 更新以下字段:
+# - Status: 🟢 Active / 🟡 Idle / 🔴 Blocked
+# - Current Task: 当前任务描述
+# - Last Activity: YYYY-MM-DD HH:MM
+# - Last Commit: 最新commit hash
+# - Blocked: Yes/No - 如果Yes，说明原因
+# - Next Action: 下一步计划
+
+# 提交状态更新
+git add agent-status.md
+git commit -m "chore(agent-a): update status - [简短描述]"
+git push origin main
+```
+
+**状态更新示例**:
+```markdown
+### Agent A (Template System)
+| Field | Value |
+|-------|-------|
+| Status | 🟢 Active |
+| Current Task | Working on Issue #7 - Define DocumentMetadata type |
+| Last Activity | 2026-03-05 23:15 |
+| Last Commit | abc1234 - feat(template): add template engine |
+| Assigned Issues | 1 (#7) |
+| Completed Issues | 0 |
+| Blocked | No |
+| Next Action | Complete metadata validation logic |
+```
+
+### 状态更新流程
+1. 开始任务 → 在Issue评论 + 更新agent-status.md
+2. 提交代码 → 更新agent-status.md的Last Commit
+3. 遇到问题 → 在Issue评论 + 更新agent-status.md状态为Blocked
+4. 完成任务 → 更新agent-status.md状态为Idle + 更新Completed Issues
 
 ---
 

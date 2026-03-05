@@ -252,19 +252,31 @@ pwd  # Should show knowledge-assistant
 
 ### When Starting Task
 1. Comment on issue: "Starting work"
-2. Create branch
-3. Start development
+2. **Update agent-status.md in dev repo** (重要！)
+   ```bash
+   cd ../knowledge-assistant-dev
+   # Edit agent-status.md - Update your Agent B section
+   # Set Status to 🟢 Active, update Current Task, Last Activity
+   git add agent-status.md
+   git commit -m "chore(agent-b): start working on issue #X"
+   git push origin main
+   cd ../knowledge-assistant
+   ```
+3. Create branch
+4. Start development
 
 ### When Blocked
 1. Comment on issue with problem
 2. Add `blocked` label
-3. Wait for PM assistance
+3. **Update agent-status.md** - Set Status to 🔴 Blocked
+4. Wait for PM assistance
 
 ### When Complete
 1. Push to branch
 2. Create PR
 3. Request PM review
-4. Wait for feedback
+4. **Update agent-status.md** - Set Status to 🟡 Idle, update Completed Issues
+5. Wait for feedback
 
 ---
 

@@ -268,18 +268,30 @@ pwd  # Should show knowledge-assistant
 
 ### When Starting Task
 1. Comment on issue: "Starting work"
-2. Setup test environment if needed
-3. Begin testing
+2. **Update agent-status.md in dev repo** (重要！)
+   ```bash
+   cd ../knowledge-assistant-dev
+   # Edit agent-status.md - Update your Agent Test section
+   # Set Status to 🟢 Active, update Current Task, Last Activity
+   git add agent-status.md
+   git commit -m "chore(agent-test): start working on issue #X"
+   git push origin main
+   cd ../knowledge-assistant
+   ```
+3. Setup test environment if needed
+4. Begin testing
 
 ### When Blocked
 1. Comment on issue with problem
 2. Add `blocked` label
-3. Wait for PM assistance
+3. **Update agent-status.md** - Set Status to 🔴 Blocked
+4. Wait for PM assistance
 
 ### When Complete
 1. Generate test report
 2. Submit report to PM
 3. Update issue status
+4. **Update agent-status.md** - Set Status to 🟡 Idle, update Completed Issues
 
 ---
 

@@ -218,6 +218,291 @@ Issue: #B2"
 
 ---
 
-**版本**: v1.0  
+## 🚀 启动流程（重要）
+
+### 每次启动时必做
+1. **读取状态文档**
+   ```bash
+   # 读取自己的catch up文档
+   cat agents/member-b/CATCH_UP.md
+   
+   # 读取项目状态
+   cat agent-status.md
+   ```
+
+2. **切换到工作仓库**
+   ```bash
+   # 切换到主仓库
+   cd /d/opencode/knowledge-assistant
+   
+   # 拉取最新代码
+   git pull origin main
+   ```
+
+3. **检查分配的任务**
+   - 查看GitHub Issues（label: `agent: B`）
+   - 确认当前分支
+   - 检查是否有阻塞
+
+### 启动检查清单
+- [ ] 已读取CATCH_UP.md
+- [ ] 已切换到主仓库
+- [ ] 已拉取最新代码
+- [ ] 已检查分配的Issue
+- [ ] 已确认工作分支
+
+---
+
+## 📊 状态更新机制
+
+### 更新时机
+- ✅ 开始工作时
+- ✅ 提交代码后
+- ✅ 创建PR后
+- ✅ 遇到阻塞时
+- ✅ 完成任务时
+
+### 更新方式
+在主Issue或PR中评论状态：
+```
+Status Update:
+- Progress: 60%
+- Current: Implementing validation logic
+- Blockers: None
+- Next: Add error handling
+```
+
+---
+
+## ⚠️ 行为准则（严格执行）
+
+### 必须执行
+1. ✅ 每次启动时读取CATCH_UP.md
+2. ✅ 只修改自己负责的模块
+3. ✅ 编写完整的单元测试
+4. ✅ 确保测试覆盖率 >80%
+5. ✅ 提交前运行所有测试
+6. ✅ 使用规范的提交信息
+7. ✅ 及时响应Review反馈
+
+### 严格禁止
+1. ❌ 修改其他Agent的模块
+2. ❌ 提交未测试的代码
+3. ❌ 跳过单元测试
+4. ❌ 直接推送到main分支
+5. ❌ 破坏现有接口
+6. ❌ 不通过PR直接合并
+7. ❌ 忽略代码规范检查
+
+### 违规处理
+- 发现违规立即纠正
+- 提交修复PR
+- 在Issue中说明情况
+
+---
+
+## 🔄 工作流程标准化
+
+### 开发流程
+```
+1. 认领Issue
+   ↓
+2. 创建分支 (feature/b-*)
+   ↓
+3. 编写测试 (TDD)
+   ↓
+4. 实现代码
+   ↓
+5. 本地测试
+   ↓
+6. 提交代码
+   ↓
+7. 创建PR
+   ↓
+8. 等待Review
+   ↓
+9. 根据反馈修改
+   ↓
+10. 合并完成
+```
+
+### 测试流程
+```
+1. 编写单元测试
+   ↓
+2. 运行测试: pytest tests/test_*.py -v
+   ↓
+3. 检查覆盖率: pytest --cov=scripts
+   ↓
+4. 确保覆盖率 >80%
+   ↓
+5. 运行代码检查: black, flake8, mypy
+   ↓
+6. 全部通过后提交
+```
+
+---
+
+## 📝 模块开发规范
+
+### 实现元数据解析器时
+```
+1. 定义类型结构
+   - DocumentMetadata dataclass
+   - 必需字段和可选字段
+   
+2. 实现解析逻辑
+   - YAML frontmatter解析
+   - 错误处理
+   
+3. 实现验证逻辑
+   - 字段验证
+   - 类型验证
+   - 格式验证
+   
+4. 编写测试
+   - 正常解析
+   - 缺失字段
+   - 格式错误
+```
+
+### 实现工具脚本时
+```
+1. 明确工具目标
+   - 输入输出格式
+   - 功能范围
+   
+2. 实现核心功能
+   - 算法实现
+   - 数据处理
+   
+3. 添加错误处理
+   - 异常捕获
+   - 用户友好提示
+   
+4. 编写测试
+   - 功能测试
+   - 边界测试
+   - 性能测试
+```
+
+---
+
+## 🔗 协作规范
+
+### 提供接口给Agent A
+```python
+# scripts/types.py
+@dataclass
+class DocumentMetadata:
+    title: str
+    date: date
+    tags: List[str] = None
+    
+# scripts/utils.py
+def load_file(path: str) -> str:
+    """Load file content"""
+    
+def save_file(path: str, content: str):
+    """Save content to file"""
+```
+
+### 不要修改Agent A的代码
+```python
+# ❌ 不要这样做
+# 直接修改 scripts/template_engine.py
+# 直接修改 templates/*.md
+
+# ✅ 应该这样做
+# 通过Issue请求修改
+# 使用现有接口
+```
+
+### 与PM协作
+- 通过Issue接收任务
+- 通过PR提交代码
+- 通过评论沟通问题
+
+### 与Test Agent协作
+- 接受测试反馈
+- 修复发现的bug
+- 提供代码说明
+
+---
+
+## 🎯 质量标准
+
+### 代码质量
+- [ ] PEP 8合规（black格式化）
+- [ ] 类型注解完整
+- [ ] 文档字符串完整
+- [ ] 错误处理完善
+
+### 测试质量
+- [ ] 覆盖率 >80%
+- [ ] 测试正常情况
+- [ ] 测试边界情况
+- [ ] 测试错误情况
+- [ ] 所有测试通过
+
+### 性能标准
+- [ ] 无明显性能问题
+- [ ] 大文件处理优化
+- [ ] 内存使用合理
+
+---
+
+## 🛠️ 开发工具
+
+### 代码格式化
+```bash
+# 格式化代码
+black scripts/metadata_parser.py
+
+# 检查格式
+black --check scripts/
+```
+
+### 代码检查
+```bash
+# Lint检查
+flake8 scripts/metadata_parser.py
+
+# 类型检查
+mypy scripts/metadata_parser.py
+```
+
+### 测试工具
+```bash
+# 运行测试
+pytest tests/test_metadata_parser.py -v
+
+# 检查覆盖率
+pytest tests/ --cov=scripts --cov-report=term-missing
+
+# 生成HTML报告
+pytest tests/ --cov=scripts --cov-report=html
+```
+
+---
+
+## 📌 重要提醒
+
+### 提交前检查
+- [ ] 代码已格式化
+- [ ] 所有测试通过
+- [ ] 覆盖率 >80%
+- [ ] 文档已更新
+- [ ] 提交信息规范
+
+### 遇到问题时
+1. 查看CATCH_UP.md
+2. 查看AGENTS.md详细说明
+3. 在Issue中提问
+4. 等待PM协助
+
+---
+
+**版本**: v2.0  
 **更新日期**: 2026-03-05  
 **维护者**: PM Agent

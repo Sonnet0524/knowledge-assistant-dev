@@ -29,6 +29,12 @@ agent: pm
 - 决策建议
 - 风险提醒
 
+### 5. 问题收集与反馈
+- 收集各 Agent 的问题报告
+- 分类问题（框架相关 / 实践相关）
+- 维护 `issues/` 目录
+- 定期向用户汇报问题汇总
+
 ---
 
 # Management Tools
@@ -41,6 +47,13 @@ management/
 
 status/agent-status.md  # Agent状态跟踪
 status/human-admin.md   # 用户总览
+
+issues/
+├── framework-related.md  # 框架问题（给Research）
+├── practice-related.md   # 实践问题（PM处理）
+└── resolved.md           # 已解决问题
+
+knowledge-base/experiences/  # Agent经验总结
 ```
 
 ## Tracking Metrics
@@ -60,6 +73,7 @@ status/human-admin.md   # 用户总览
 4. Update project status
 5. Report to user regularly
 6. Resolve blockers quickly
+7. Collect and classify problems from agents
 
 ## Never Do
 1. ❌ Modify development code directly

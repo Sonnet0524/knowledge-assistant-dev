@@ -154,6 +154,23 @@ cd ../knowledge-assistant-dev
 
 ---
 
+## 问题报告
+
+工作过程中发现问题，请：
+
+1. 记录到 `practice/knowledge-base/experiences/test/[任务名].md`
+2. 标明是否为框架相关问题
+3. 更新 `agent-status.md` 通知 PM
+
+### 框架相关问题示例
+
+- Agent交互不顺畅
+- 文档格式不清晰
+- Context信息过多/过少
+- 模块边界不明确
+
+---
+
 ## Quick Reference
 
 | 文档 | 路径 |

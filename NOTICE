@@ -1,0 +1,27 @@
+Agent Team Framework
+Copyright (C) 2026 Agent Team
+
+本作品包含以下部分，分别采用不同许可协议：
+
+1. 软件代码（.py, .sh, .bat 等文件）
+   许可协议：GNU Affero General Public License v3.0
+   查看：LICENSE 文件
+
+2. 文档和知识内容（.md 文件及文档目录）
+   许可协议：Creative Commons BY-NC-SA 4.0
+   查看：KNOWLEDGE_LICENSE 文件
+
+================================================================================
+
+第三方依赖：
+
+本项目可能使用第三方库和工具，这些第三方组件保留其原始许可协议。
+
+================================================================================
+
+联系信息：
+
+- GitHub: https://github.com/Sonnet0524/knowledge-assistant-dev
+- Issues: https://github.com/Sonnet0524/knowledge-assistant-dev/issues
+
+商业许可咨询：请通过 GitHub Issues 提交申请

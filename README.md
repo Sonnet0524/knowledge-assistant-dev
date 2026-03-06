@@ -146,3 +146,50 @@
 ---
 
 **快速跳转**: [研究概览](docs/) | [Agent交互](docs/research/agent-interaction/) | [实践验证](docs/practice/knowledge-assistant/)
+
+---
+
+## 📜 许可协议
+
+### 代码部分
+
+本项目代码采用 **GNU Affero General Public License v3.0 (AGPL v3.0)** 协议开源。
+
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+
+**关键要求**：
+- ✅ 自由使用、修改和分发
+- ✅ 任何修改版本必须以AGPL开源
+- ✅ 网络服务使用也必须开源（AGPL特有）
+- ✅ 必须保留版权声明
+
+**商业使用**：如需商业使用，请联系获取商业许可。
+
+📄 [查看完整协议](LICENSE)
+
+---
+
+### 知识内容
+
+本项目的文档、知识库等知识内容采用 **CC BY-NC-SA 4.0** 协议。
+
+**关键要求**：
+- ✅ 必须署名
+- ❌ 禁止商业使用
+- ✅ 相同方式共享
+
+**商业使用**：如需商业使用，请联系获取商业许可。
+
+📄 [查看完整协议](KNOWLEDGE_LICENSE)
+
+---
+
+## 🏷️ 版权声明
+
+Copyright © 2026 Agent Team. All rights reserved.
+
+本项目包括：
+- 代码（AGPL v3.0）：允许开源使用，禁止闭源商业使用
+- 知识（CC BY-NC-SA 4.0）：允许非商业使用，禁止商业使用
+
+**商业合作**：通过 [GitHub Issues](https://github.com/Sonnet0524/knowledge-assistant-dev/issues) 联系

@@ -301,7 +301,7 @@ PM评估 → 创建解决方案文档 → Agent执行 → 关闭异常
 - 🐛 发现了什么问题？
 - 💡 有什么改进建议？
 
-**参与讨论**: [GitHub Discussions](https://github.com/Sonnet0524/knowledge-assistant-dev/discussions)
+**参与讨论**: [GitHub Discussions](https://github.com/Sonnet0524/SG-AgentTeam/discussions)
 
 ---
 

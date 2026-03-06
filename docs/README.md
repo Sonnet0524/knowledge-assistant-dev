@@ -238,7 +238,7 @@
 
 欢迎：理论探讨、实验验证、问题发现、创新想法
 
-**参与方式**: [GitHub Discussions](https://github.com/Sonnet0524/knowledge-assistant-dev/discussions) | [提交Issue](https://github.com/Sonnet0524/knowledge-assistant-dev/issues)
+**参与方式**: [GitHub Discussions](https://github.com/Sonnet0524/SG-AgentTeam/discussions) | [提交Issue](https://github.com/Sonnet0524/SG-AgentTeam/issues)
 
 ---
 
@@ -250,7 +250,7 @@
   author={Agent Team},
   year={2026},
   publisher={GitHub},
-  url={https://github.com/Sonnet0524/knowledge-assistant-dev}
+  url={https://github.com/Sonnet0524/SG-AgentTeam}
 }
 ```
 

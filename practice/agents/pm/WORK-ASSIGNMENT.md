@@ -100,7 +100,7 @@ A personal knowledge management tool that helps you:
 
 ```bash
 # Clone and setup
-git clone https://github.com/hujinjie/knowledge-assistant.git
+git clone https://github.com/Sonnet0524/SG-AgentTeam.git
 cd knowledge-assistant
 pip install -r requirements.txt
 

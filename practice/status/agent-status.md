@@ -24,7 +24,7 @@
 ## 🎉 v1.0.0 Release Summary
 
 **Release Date**: 2026-03-06  
-**Release URL**: https://github.com/Sonnet0524/knowledge-assistant/releases/tag/v1.0.0
+**Release URL**: https://github.com/Sonnet0524/SG-AgentTeam/releases/tag/v1.0.0
 
 ### Quality Metrics
 

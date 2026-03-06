@@ -148,13 +148,13 @@ Level 2 (参考) ─── 不限   ─── 按需查询
 - 🐛 **问题发现** - 实践中的问题
 - 💡 **创新想法** - 新的研究方向
 
-**参与方式**: [GitHub Discussions](https://github.com/Sonnet0524/knowledge-assistant-dev/discussions) | [提交Issue](https://github.com/Sonnet0524/knowledge-assistant-dev/issues)
+**参与方式**: [GitHub Discussions](https://github.com/Sonnet0524/SG-AgentTeam/discussions) | [提交Issue](https://github.com/Sonnet0524/SG-AgentTeam/issues)
 
 ---
 
 # 🛠️ 实践篇
 
-> 本项目(knowledge-assistant-dev)的Agent Team设计与实现
+> 本项目(SG-AgentTeam)的Agent Team设计与实现
 
 ## 📋 项目概述
 
@@ -179,7 +179,7 @@ Level 2 (参考) ─── 不限   ─── 按需查询
 ### 目录结构
 
 ```
-knowledge-assistant-dev/
+SG-AgentTeam/
 ├── practice/                # 🛠️ 实践部分
 │   ├── agents/             # 🤖 Agent配置目录
 │   │   ├── pm/             # PM Agent
@@ -201,7 +201,7 @@ knowledge-assistant-dev/
 │   └── reference/          # 参考资料
 └── opencode.json           # ⚙️ Agent配置入口
 ```
-knowledge-assistant-dev/
+SG-AgentTeam/
 ├── practice/                # 🛠️ 实践部分（Agent Team实现）
 │   ├── agents/              # 🤖 Agent配置目录
 │   │   ├── pm/              # PM Agent
@@ -301,7 +301,7 @@ practice/agents/
 
 ### 详细报告
 
-📖 [实践验证报告](docs/practice/knowledge-assistant/)  
+📖 [实践验证报告](docs/practice/SG-AgentTeam/)  
 📖 [经验教训总结](docs/practice/lessons-learned/)
 
 ---
@@ -326,7 +326,7 @@ practice/agents/
   title={Agent Team Framework: A Document-based Agent Interaction Model},
   author={Agent Team},
   year={2026},
-  url={https://github.com/Sonnet0524/knowledge-assistant-dev}
+  url={https://github.com/Sonnet0524/SG-AgentTeam}
 }
 ```
 
@@ -375,4 +375,4 @@ Copyright © 2026 Agent Team. All rights reserved.
 - 代码（AGPL v3.0）：允许开源使用，禁止闭源商业使用
 - 知识（CC BY-NC-SA 4.0）：允许非商业使用，禁止商业使用
 
-**商业合作**：通过 [GitHub Issues](https://github.com/Sonnet0524/knowledge-assistant-dev/issues) 联系
+**商业合作**：通过 [GitHub Issues](https://github.com/Sonnet0524/SG-AgentTeam/issues) 联系

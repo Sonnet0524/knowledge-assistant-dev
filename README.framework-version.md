@@ -808,5 +808,5 @@ agents/
 **引用格式**：
 ```
 Agent Team Framework: A Reusable AI Agent Collaboration Framework
-https://github.com/Sonnet0524/knowledge-assistant-dev
+https://github.com/Sonnet0524/SG-AgentTeam
 ```

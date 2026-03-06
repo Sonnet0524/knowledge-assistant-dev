@@ -16,10 +16,10 @@
 | Team | Location | Role | Status | Current |
 |------|----------|------|--------|---------|
 | **Research Team** | `agents/research/` | 框架研究 | 🟢 Active | Agent配置创建 |
-| **PM Team** | `agents/pm/` | 项目管理 | 🟢 Active | 协调完成 |
+| **PM Team** | `agents/pm/` | 项目管理 | 🟢 Active | M6完成，准备发布 |
 | **Template Team** | `agents/template/` | 模板系统 | ✅ Completed | M3 完成 |
 | **Data Team** | `agents/data/` | 数据+工具 | ✅ Completed | M4 完成 |
-| **Test Team** | `agents/test/` | 测试系统 | ✅ Completed | M5 完成 |
+| **Test Team** | `agents/test/` | 测试系统 | 🟡 Available | 待最终测试 |
 
 ---
 
@@ -101,10 +101,10 @@ Overall: 87% (5.4/6 milestones)
 
 | Priority | Task | Team |
 |----------|------|------|
-| 🔴 High | Issue #27: extract_keywords.py | Data Team |
-| 🟡 Medium | Review and finalize M6 documentation | PM Team |
-| 🟡 Medium | Create GitHub Release (after M4) | PM Team |
-| 🟢 Low | Update user-facing documentation | PM Team |
+| 🔴 High | 执行v1.0最终测试（Phase 2） | Test Agent |
+| 🔴 High | Review测试报告并决定发布 | PM Team |
+| 🟡 Medium | 创建GitHub Release v1.0.0 | PM Team |
+| 🟢 Low | 规划v1.1改进项 | PM Team |
 
 ---
 

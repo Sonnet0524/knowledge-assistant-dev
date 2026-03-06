@@ -156,6 +156,12 @@ Level 2 (参考) ─── 不限   ─── 按需查询
 
 > 本项目(SG-AgentTeam)的Agent Team设计与实现
 
+## 🚀 快速开始
+
+**想复刻这个实践？** 👉 [复刻实践指南](practice/GETTING-STARTED.md)
+
+---
+
 ## 📋 项目概述
 
 **项目名称**: Knowledge Assistant  
@@ -180,48 +186,23 @@ Level 2 (参考) ─── 不限   ─── 按需查询
 
 ```
 SG-AgentTeam/
-├── practice/                # 🛠️ 实践部分
-│   ├── agents/             # 🤖 Agent配置目录
-│   │   ├── pm/             # PM Agent
-│   │   ├── data/           # Data Agent
-│   │   ├── template/       # Template Agent
-│   │   ├── test/           # Test Agent
-│   │   └── research/       # Research Agent
-│   ├── management/         # 📊 项目管理（PM负责）
-│   ├── knowledge-base/     # 🧠 知识库（项目级）
-│   ├── development-guide/  # 🔧 开发指南
-│   ├── logs/               # 📝 Agent交互日志
-│   └── status/             # 📈 状态文档
-│       ├── agent-status.md
-│       └── human-admin.md
-├── docs/                   # 📚 研究文档（框架篇内容）
-│   ├── research/           # 核心研究
-│   ├── methodology/        # 方法论
-│   ├── practice/           # 实践验证
-│   └── reference/          # 参考资料
-└── opencode.json           # ⚙️ Agent配置入口
-```
-SG-AgentTeam/
-├── practice/                # 🛠️ 实践部分（Agent Team实现）
-│   ├── agents/              # 🤖 Agent配置目录
-│   │   ├── pm/              # PM Agent
-│   │   ├── data/            # Data Agent
-│   │   ├── template/        # Template Agent
-│   │   ├── test/            # Test Agent
-│   │   └── research/        # Research Agent
-│   ├── management/          # 📊 项目管理（PM负责）
-│   ├── knowledge-base/      # 🧠 知识库（项目级）
-│   ├── development-guide/   # 🔧 开发指南
-│   ├── logs/                # 📝 Agent交互日志
-│   └── status/              # 📈 状态文档
-│       ├── agent-status.md
-│       └── human-admin.md
-├── docs/                    # 📚 研究文档（框架篇内容）
+├── agents/                  # 🤖 框架层Agent
+│   └── research/            # Research Agent
+├── docs/                    # 📚 框架文档
 │   ├── research/            # 核心研究
 │   ├── methodology/         # 方法论
-│   ├── practice/            # 实践验证
-│   └── reference/           # 参考资料
-└── opencode.json            # ⚙️ Agent配置入口
+│   └── ...
+├── practice/                # 🛠️ 实践部分
+│   ├── agents/              # 🤖 实践层Agent
+│   │   ├── pm/
+│   │   ├── data/
+│   │   ├── template/
+│   │   └── test/
+│   ├── management/          # 📊 项目管理
+│   ├── knowledge-base/      # 🧠 知识库
+│   ├── status/              # 📈 状态文档
+│   └── ...
+└── opencode.json            # ⚙️ Agent配置
 ```
 
 ### 交互机制
@@ -250,42 +231,26 @@ SG-AgentTeam/
 
 ## 🚀 快速开始
 
-### 前置要求
-
-- 安装 [OpenCode CLI](https://opencode.ai)
-- 克隆本仓库
+**详细指南**: [复刻实践指南](practice/GETTING-STARTED.md)
 
 ### 启动Agent
 
 ```bash
-# 启动 PM Agent
-./start-pm.sh   # Linux/Mac
-start-pm.bat    # Windows
-
-# 启动 Data Agent
-./start-data.sh
-
-# 启动 Template Agent
-./start-template.sh
-
-# 启动 Test Agent
-./start-test.sh
-
-# 启动 Research Agent
-./start-research.sh
+./start-pm.sh        # PM Agent - 项目管理
+./start-data.sh      # Data Agent - 数据开发
+./start-template.sh  # Template Agent - 模板开发
+./start-test.sh      # Test Agent - 测试保证
+./start-research.sh  # Research Agent - 框架研究
 ```
 
 ### Agent入口文件
 
-每个Agent通过 `CATCH_UP.md` 快速恢复上下文：
-
 ```
-practice/agents/
-├── pm/CATCH_UP.md         # PM Agent入口
-├── data/CATCH_UP.md       # Data Agent入口
-├── template/CATCH_UP.md   # Template Agent入口
-├── test/CATCH_UP.md       # Test Agent入口
-└── research/CATCH_UP.md   # Research Agent入口
+agents/research/CATCH_UP.md      # Research Agent (框架层)
+practice/agents/pm/CATCH_UP.md       # PM Agent (实践层)
+practice/agents/data/CATCH_UP.md     # Data Agent
+practice/agents/template/CATCH_UP.md # Template Agent
+practice/agents/test/CATCH_UP.md     # Test Agent
 ```
 
 ---

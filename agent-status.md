@@ -6,19 +6,19 @@
 
 ## Status Overview
 
-**Last Updated**: 2026-03-06 03:05  
+**Last Updated**: 2026-03-06 03:40  
 **Active Teams**: 4 Teams  
 **Sprint**: Sprint 1 (Day 2/14)
-**Phase**: Phase 3 - PR Integration & Merge ✅ Completed
+**Phase**: Phase 2-3 - Core Development & Tools
 
 ### Team Structure
 
-| Team | Location | Role | Status | PR |
-|------|----------|------|--------|-----|
-| **PM Team** | `agents/pm/` | 项目管理 | 🟢 Active | #21 merged |
-| **Template Team** | `agents/template/` | 模板系统 | ✅ Completed | #22 merged |
-| **Data Team** | `agents/data/` | 数据系统 | ✅ Completed | #19 merged |
-| **Test Team** | `agents/test/` | 测试系统 | ✅ Completed | #18 merged |
+| Team | Location | Role | Status | PR/Issue |
+|------|----------|------|--------|----------|
+| **PM Team** | `agents/pm/` | 项目管理 | 🟢 Active | - |
+| **Template Team** | `agents/template/` | 模板系统 | 🟡 Revision Needed | PR #29 (lint失败) |
+| **Data Team** | `agents/data/` | 数据系统 | 🟢 Active | Issue #25, #27 |
+| **Test Team** | `agents/test/` | 测试系统 | ✅ Completed | - |
 
 ---
 
@@ -28,49 +28,42 @@
 | Field | Value |
 |-------|-------|
 | Status | 🟢 Active |
-| Current Task | Phase 3 完成，准备下一阶段 |
-| Last Activity | 2026-03-06 03:05 |
-| Next Action | 关闭已完成的Issues，分配新任务 |
-
-**Working Directory**: knowledge-assistant-dev  
-**Responsible For**:
-- 项目规划
-- 团队协调
-- 代码审查
-- 用户交互
+| Current Task | 审核完成，监控 PR #29 修复 |
+| Last Activity | 2026-03-06 03:40 |
+| Next Action | 等待 Template Team 修复 lint |
 
 ---
 
 ### Template Team
 | Field | Value |
 |-------|-------|
-| Status | ✅ Completed |
-| Current Task | PR #22 已合并 - 5个文档模板完成 |
-| Last Activity | 2026-03-06 02:57 |
-| Next Action | 等待新任务 |
+| Status | 🟡 Revision Needed |
+| Current Task | PR #29 需要 lint 修复 |
+| Last Activity | 2026-03-06 11:15 |
+| Next Action | 修复 lint 错误后重新推送 |
 
-**Working Directory**: knowledge-assistant  
-**Responsible Modules**:
-- `templates/*.md`
-- `scripts/template/` (未来)
-- `scripts/config/` (未来)
+**PR #29 状态**:
+- ✅ 功能完整: TemplateEngine + ConfigManager
+- ✅ 测试通过: 56 个测试
+- ❌ Lint 失败: 需要修复
 
 ---
 
 ### Data Team
 | Field | Value |
 |-------|-------|
-| Status | ✅ Completed |
-| Current Task | PR #19 已合并 - utils实现完成 |
-| Last Activity | 2026-03-06 03:05 |
-| Next Action | 等待新任务 |
+| Status | 🟢 Active |
+| Current Task | 可继续开发 Issue #25, #27 |
+| Last Activity | 2026-03-06 03:40 |
+| Next Action | 选择新任务开发 |
 
-**Working Directory**: knowledge-assistant  
-**Responsible Modules**:
-- `scripts/types.py`
-- `scripts/metadata_parser.py`
-- `scripts/utils.py`
-- `scripts/tools/*.py`
+**已完成**:
+- ✅ PR #28 已合并 (索引生成工具)
+- ✅ Issue #26 已关闭
+
+**待开发**:
+- Issue #25: 笔记整理工具
+- Issue #27: 关键词提取工具
 
 ---
 
@@ -78,26 +71,9 @@
 | Field | Value |
 |-------|-------|
 | Status | ✅ Completed |
-| Current Task | PR #18 已合并 - 测试框架完成 |
+| Current Task | M5 测试框架已完成 |
 | Last Activity | 2026-03-06 03:05 |
 | Next Action | 等待新任务 |
-
-**Working Directory**: knowledge-assistant  
-**Responsible Modules**:
-- `tests/*.py`
-- `test-data/`
-- 测试报告
-
----
-
-## Sprint 1 Progress
-
-### Week 1 (Mar 5-12)
-| Team | Planned Tasks | Completed | In Progress | Blocked |
-|------|---------------|-----------|-------------|---------|
-| Data Team | 4 | 4 | 0 | 0 |
-| Template Team | 1 | 1 | 0 | 0 |
-| Test Team | 3 | 3 | 0 | 0 |
 
 ---
 
@@ -105,52 +81,64 @@
 
 | PR | Team | Title | Status | CI | Action |
 |----|------|-------|--------|----|----|
+| #29 | Template | 模板引擎和配置系统 | 🟡 Lint失败 | ❌ Fail | 等待修复 |
+| #28 | Data | 索引生成工具 | ✅ Merged | ✅ Pass | Done |
 | #22 | Template | 文档模板 | ✅ Merged | ✅ Pass | Done |
 | #21 | PM | lint配置 | ✅ Merged | ✅ Pass | Done |
 | #19 | Data | utils实现 | ✅ Merged | ✅ Pass | Done |
 | #18 | Test | 测试框架 | ✅ Merged | ✅ Pass | Done |
-| #17 | Template | 文档模板(旧) | ✅ Closed | - | Superseded |
+
+---
+
+## Issue Status Summary
+
+| Issue | Team | Task | Status |
+|-------|------|------|--------|
+| #27 | Data | 关键词提取工具 | ⏳ Pending |
+| #26 | Data | 索引生成工具 | ✅ Closed |
+| #25 | Data | 笔记整理工具 | ⏳ Pending |
+| #24 | Template | 配置系统 | ✅ PR #29 |
+| #23 | Template | 模板引擎 | ✅ PR #29 |
+| #20 | - | 修复代码格式问题 | ✅ Closed |
+
+---
+
+## Sprint 1 Progress
+
+### Milestone Completion
+
+| Milestone | Status | Progress |
+|-----------|--------|----------|
+| M1 Infrastructure | ✅ Done | 100% |
+| M2 Metadata System | ✅ Done | 100% |
+| M3 Template System | 🔄 In Progress | 75% |
+| M4 Tools | 🔄 In Progress | 33% |
+| M5 Test Coverage | ✅ Done | 100% |
+| M6 Release v1.0 | ⏳ Pending | 0% |
+
+**Overall**: 3.1/6 milestones = **52%**
 
 ---
 
 ## Activity Log
 
 ### 2026-03-06
-- **03:05** - PM: Merged PR #18 and #19 - All Phase 3 PRs merged!
-- **02:57** - PM: Merged PR #22 (Template Team)
-- **10:50** - Data Team: Rebased PR #19, CI passed
-- **10:45** - Template Team: Created clean PR #22, closed PR #17
-- **02:20** - PM: Unified team-level configuration
-- **01:35** - PM: Reviewed all PRs
-
-### 2026-03-05
-- **23:40** - Template Team: Created PR #17
-- **23:15** - Data Team: Created PR #19
-- **23:10** - Test Team: Created PR #18
+- **03:40** - PM: Reviewed PR #28, #29; Merged #28; Comment on #29; Closed #20
+- **03:25** - Template Team: Created PR #29 (TemplateEngine + ConfigManager)
+- **03:22** - Data Team: Created PR #28 (generate_index tool)
+- **03:11** - PM: Created Issues #23-27 for next phase
+- **03:05** - PM: Merged PR #18 and #19
+- **02:57** - PM: Merged PR #22
 
 ---
 
 ## Blockers & Risks
 
 ### Current Blockers
-None
-
-### Potential Risks
-| Risk | Owner | Severity | Mitigation |
-|------|-------|----------|------------|
-| 无当前风险 | - | - | - |
+| Blocker | Owner | Status |
+|---------|-------|--------|
+| PR #29 lint 失败 | Template Team | 等待修复 |
 
 ---
 
-## Status Update Protocol
-
-**Status Values**:
-- 🟢 Active: Currently working
-- ✅ Completed: Task finished
-- 🟡 Idle: Waiting for task
-- 🔴 Blocked: Cannot proceed
-
----
-
-**Next Review**: 2026-03-06 09:00  
 **Maintained By**: PM Team

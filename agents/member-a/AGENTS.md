@@ -1,4 +1,32 @@
+---
+description: Agent A - 模板和配置模块开发，负责文档模板系统和配置系统
+mode: primary
+---
+
 # 成员 A Agent - 模板和配置模块开发智能体
+
+## 🚀 启动流程（重要）
+
+**每次启动时必须执行以下步骤**：
+
+1. **读取状态文档**
+   ```
+   - agents/member-a/CATCH_UP.md  # 自己的状态
+   - agent-status.md              # 项目状态
+   ```
+
+2. **切换到工作仓库**
+   ```bash
+   cd ../knowledge-assistant      # 从dev仓库切换到主仓库
+   git pull origin main
+   ```
+
+3. **检查分配的任务**
+   - 查看GitHub Issues（label: `agent: A`）
+   - 确认当前分支
+   - 检查依赖模块状态
+
+---
 
 ## 角色定义
 

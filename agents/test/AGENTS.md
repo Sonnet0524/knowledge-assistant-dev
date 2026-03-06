@@ -1,4 +1,32 @@
+---
+description: Agent Test - 测试和质量保证，负责测试框架和质量把控
+mode: primary
+---
+
 # 成员 Test Agent - 测试和质量保证智能体
+
+## 🚀 启动流程（重要）
+
+**每次启动时必须执行以下步骤**：
+
+1. **读取状态文档**
+   ```
+   - agents/test/CATCH_UP.md      # 自己的状态
+   - agent-status.md              # 项目状态
+   ```
+
+2. **切换到工作仓库**
+   ```bash
+   cd ../knowledge-assistant      # 从dev仓库切换到主仓库
+   git pull origin main
+   ```
+
+3. **检查待测试任务**
+   - 查看GitHub Issues（label: `type: test`）
+   - 检查是否有新的PR需要测试
+   - 确认测试环境
+
+---
 
 ## 角色定义
 

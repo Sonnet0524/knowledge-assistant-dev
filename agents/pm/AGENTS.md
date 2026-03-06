@@ -1,4 +1,33 @@
+---
+description: PM Agent - 项目管理和协调，负责整体管理和团队协调
+mode: primary
+---
+
 # PM Agent - 项目管理智能体
+
+## 🚀 启动流程（重要）
+
+**每次启动时必须执行以下步骤**：
+
+1. **读取状态文档**
+   ```
+   - agents/pm/CATCH_UP.md        # 自己的状态
+   - agent-status.md              # 团队状态
+   - HUMAN_ADMIN.md               # 用户总览
+   ```
+
+2. **同步仓库**
+   ```bash
+   git pull origin main           # dev仓库
+   cd ../knowledge-assistant && git pull origin main  # 主仓库
+   ```
+
+3. **确认当前任务**
+   - 检查CATCH_UP.md中的"Current Focus"
+   - 检查Sprint计划
+   - 确认优先级
+
+---
 
 ## 角色定义
 

@@ -20,6 +20,7 @@ knowledge-assistant-dev (Private)          knowledge-assistant (Public)
 ## 📚 内容导航
 
 ### Agent 配置
+- **[OpenCode Agent使用指南](AGENTS_USAGE.md)** - ⭐ 如何启动和使用4个agent
 - [PM Agent](agents/pm/AGENTS.md) - 项目管理智能体
 - [成员 A Agent](agents/member-a/AGENTS.md) - 模板和配置模块开发
 - [成员 B Agent](agents/member-b/AGENTS.md) - 元数据和工具模块开发
@@ -48,11 +49,28 @@ git clone https://github.com/Sonnet0524/knowledge-assistant-dev.git
 git clone https://github.com/Sonnet0524/knowledge-assistant.git
 ```
 
-### 2. 阅读配置
+### 2. 使用OpenCode启动Agent
+
+本项目已配置OpenCode Agent系统，可以直接启动：
+
+```bash
+# 启动PM Agent（在dev仓库）
+opencode --agent pm
+
+# 启动Agent A/B/Test（在主仓库）
+cd ../knowledge-assistant
+opencode --agent member-a
+opencode --agent member-b
+opencode --agent test
+```
+
+详细使用说明请查看 [OpenCode Agent使用指南](AGENTS_USAGE.md)。
+
+### 3. 阅读配置
 
 每个 Agent 应该先阅读对应的 AGENTS.md 配置文件，了解自己的职责和规范。
 
-### 3. 开始工作
+### 4. 开始工作
 
 按照 [工作流程](development-guide/workflow.md) 开始开发。
 

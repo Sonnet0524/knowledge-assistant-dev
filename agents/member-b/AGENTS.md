@@ -1,4 +1,32 @@
+---
+description: Agent B - 元数据和工具模块开发，负责元数据系统和工具脚本
+mode: primary
+---
+
 # 成员 B Agent - 元数据和工具模块开发智能体
+
+## 🚀 启动流程（重要）
+
+**每次启动时必须执行以下步骤**：
+
+1. **读取状态文档**
+   ```
+   - agents/member-b/CATCH_UP.md  # 自己的状态
+   - agent-status.md              # 项目状态
+   ```
+
+2. **切换到工作仓库**
+   ```bash
+   cd ../knowledge-assistant      # 从dev仓库切换到主仓库
+   git pull origin main
+   ```
+
+3. **检查分配的任务**
+   - 查看GitHub Issues（label: `agent: B`）
+   - 确认当前分支
+   - 检查是否有阻塞
+
+---
 
 ## 角色定义
 

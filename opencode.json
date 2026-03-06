@@ -1,0 +1,60 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "agent": {
+    "pm": {
+      "description": "PM Agent - 项目管理和协调，负责整体管理和团队协调",
+      "mode": "primary",
+      "prompt": "{file:./agents/pm/AGENTS.md}",
+      "permission": {
+        "edit": "ask",
+        "bash": {
+          "git push": "ask",
+          "git *": "allow"
+        }
+      }
+    },
+    "member-a": {
+      "description": "Agent A - 模板和配置模块开发，负责文档模板系统和配置系统",
+      "mode": "primary",
+      "prompt": "{file:./agents/member-a/AGENTS.md}",
+      "permission": {
+        "edit": "ask",
+        "bash": {
+          "git push": "ask",
+          "pytest *": "allow",
+          "black *": "allow",
+          "flake8 *": "allow",
+          "mypy *": "allow"
+        }
+      }
+    },
+    "member-b": {
+      "description": "Agent B - 元数据和工具模块开发，负责元数据系统和工具脚本",
+      "mode": "primary",
+      "prompt": "{file:./agents/member-b/AGENTS.md}",
+      "permission": {
+        "edit": "ask",
+        "bash": {
+          "git push": "ask",
+          "pytest *": "allow",
+          "black *": "allow",
+          "flake8 *": "allow",
+          "mypy *": "allow"
+        }
+      }
+    },
+    "test": {
+      "description": "Agent Test - 测试和质量保证，负责测试框架和质量把控",
+      "mode": "primary",
+      "prompt": "{file:./agents/test/AGENTS.md}",
+      "permission": {
+        "edit": "deny",
+        "bash": {
+          "pytest *": "allow",
+          "git diff": "allow",
+          "git log*": "allow"
+        }
+      }
+    }
+  }
+}

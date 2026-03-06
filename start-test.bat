@@ -1,16 +1,16 @@
 @echo off
 REM ====================================
-REM Agent Test Startup Script
+REM Test Agent Startup Script
 REM ====================================
 
 echo.
 echo ========================================
-echo   Agent Test - Quality Assurance
+echo   Test Agent - Quality Assurance
 echo ========================================
 echo.
 echo Working Directory: knowledge-assistant
 echo.
-echo Starting Agent Test...
+echo Starting Test Agent...
 echo.
 
 REM Check if we need to switch to main repo
@@ -27,7 +27,7 @@ if not exist "tests" (
     exit /b 1
 )
 
-REM Start OpenCode with Agent Test
+REM Start OpenCode with Test agent
 opencode --agent test
 
 pause

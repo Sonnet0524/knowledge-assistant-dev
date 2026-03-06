@@ -1,16 +1,16 @@
 #!/bin/bash
 # ====================================
-# Agent B Startup Script
+# Data Agent Startup Script
 # ====================================
 
 echo ""
 echo "========================================"
-echo "  Agent B - Metadata & Tools Developer"
+echo "  Data Agent - Data System"
 echo "========================================"
 echo ""
 echo "Working Directory: knowledge-assistant"
 echo ""
-echo "Starting Agent B..."
+echo "Starting Data Agent..."
 echo ""
 
 # Check if we need to switch to main repo
@@ -26,5 +26,5 @@ if [ ! -d "scripts" ]; then
     exit 1
 fi
 
-# Start OpenCode with Agent B
-opencode --agent member-b
+# Start OpenCode with Data agent
+opencode --agent data

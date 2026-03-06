@@ -1,16 +1,16 @@
 @echo off
 REM ====================================
-REM Agent B Startup Script
+REM Data Agent Startup Script
 REM ====================================
 
 echo.
 echo ========================================
-echo   Agent B - Metadata & Tools Developer
+echo   Data Agent - Data System
 echo ========================================
 echo.
 echo Working Directory: knowledge-assistant
 echo.
-echo Starting Agent B...
+echo Starting Data Agent...
 echo.
 
 REM Check if we need to switch to main repo
@@ -27,7 +27,7 @@ if not exist "scripts" (
     exit /b 1
 )
 
-REM Start OpenCode with Agent B
-opencode --agent member-b
+REM Start OpenCode with Data agent
+opencode --agent data
 
 pause

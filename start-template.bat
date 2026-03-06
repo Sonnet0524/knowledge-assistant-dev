@@ -1,16 +1,16 @@
 @echo off
 REM ====================================
-REM Agent A Startup Script
+REM Template Agent Startup Script
 REM ====================================
 
 echo.
 echo ========================================
-echo   Agent A - Template System Developer
+echo   Template Agent - Template System
 echo ========================================
 echo.
 echo Working Directory: knowledge-assistant
 echo.
-echo Starting Agent A...
+echo Starting Template Agent...
 echo.
 
 REM Check if we need to switch to main repo
@@ -27,7 +27,7 @@ if not exist "scripts" (
     exit /b 1
 )
 
-REM Start OpenCode with Agent A
-opencode --agent member-a
+REM Start OpenCode with Template agent
+opencode --agent template
 
 pause

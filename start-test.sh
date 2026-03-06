@@ -1,16 +1,16 @@
 #!/bin/bash
 # ====================================
-# Agent Test Startup Script
+# Test Agent Startup Script
 # ====================================
 
 echo ""
 echo "========================================"
-echo "  Agent Test - Quality Assurance"
+echo "  Test Agent - Quality Assurance"
 echo "========================================"
 echo ""
 echo "Working Directory: knowledge-assistant"
 echo ""
-echo "Starting Agent Test..."
+echo "Starting Test Agent..."
 echo ""
 
 # Check if we need to switch to main repo
@@ -26,5 +26,5 @@ if [ ! -d "tests" ]; then
     exit 1
 fi
 
-# Start OpenCode with Agent Test
+# Start OpenCode with Test agent
 opencode --agent test

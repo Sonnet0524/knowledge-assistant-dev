@@ -1,16 +1,16 @@
 #!/bin/bash
 # ====================================
-# Agent A Startup Script
+# Template Agent Startup Script
 # ====================================
 
 echo ""
 echo "========================================"
-echo "  Agent A - Template System Developer"
+echo "  Template Agent - Template System"
 echo "========================================"
 echo ""
 echo "Working Directory: knowledge-assistant"
 echo ""
-echo "Starting Agent A..."
+echo "Starting Template Agent..."
 echo ""
 
 # Check if we need to switch to main repo
@@ -26,5 +26,5 @@ if [ ! -d "scripts" ]; then
     exit 1
 fi
 
-# Start OpenCode with Agent A
-opencode --agent member-a
+# Start OpenCode with Template agent
+opencode --agent template

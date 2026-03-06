@@ -1,33 +1,27 @@
 @echo off
 REM ====================================
-REM Test Agent Startup Script
+REM Test Team Startup Script
 REM ====================================
 
 echo.
 echo ========================================
-echo   Test Agent - Quality Assurance
+echo   Test Team - Quality Assurance
 echo ========================================
 echo.
-echo Working Directory: knowledge-assistant
+echo Working Directory: knowledge-assistant-dev
 echo.
-echo Starting Test Agent...
+echo Starting Test Team...
 echo.
 
-REM Check if we need to switch to main repo
-if exist "..\knowledge-assistant" (
-    echo Switching to main repository...
-    cd ..\knowledge-assistant
-)
-
-REM Check if in correct directory
-if not exist "tests" (
-    echo Error: Not in main repository!
-    echo Please run this script when knowledge-assistant repo is available.
+REM Check if in correct directory (dev repo)
+if not exist "agents\test" (
+    echo Error: Not in dev repository!
+    echo Please run this script from knowledge-assistant-dev root.
     pause
     exit /b 1
 )
 
-REM Start OpenCode with Test agent
+REM Start OpenCode with Test Team
 opencode --agent test
 
 pause

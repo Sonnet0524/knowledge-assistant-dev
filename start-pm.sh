@@ -1,24 +1,24 @@
 #!/bin/bash
 # ====================================
-# PM Agent Startup Script
+# PM Team Startup Script
 # ====================================
 
 echo ""
 echo "========================================"
-echo "  PM Agent - Project Manager"
+echo "  PM Team - Project Manager"
 echo "========================================"
 echo ""
 echo "Working Directory: knowledge-assistant-dev"
 echo ""
-echo "Starting PM Agent..."
+echo "Starting PM Team..."
 echo ""
 
-# Check if in correct directory
-if [ ! -f "opencode.json" ]; then
-    echo "Error: opencode.json not found!"
-    echo "Please run this script from the dev repository root."
+# Check if in correct directory (dev repo)
+if [ ! -d "agents/pm" ]; then
+    echo "Error: Not in dev repository!"
+    echo "Please run this script from knowledge-assistant-dev root."
     exit 1
 fi
 
-# Start OpenCode with PM agent
+# Start OpenCode with PM Team
 opencode --agent pm

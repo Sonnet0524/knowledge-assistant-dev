@@ -1,33 +1,27 @@
 @echo off
 REM ====================================
-REM Data Agent Startup Script
+REM Data Team Startup Script
 REM ====================================
 
 echo.
 echo ========================================
-echo   Data Agent - Data System
+echo   Data Team - Data System
 echo ========================================
 echo.
-echo Working Directory: knowledge-assistant
+echo Working Directory: knowledge-assistant-dev
 echo.
-echo Starting Data Agent...
+echo Starting Data Team...
 echo.
 
-REM Check if we need to switch to main repo
-if exist "..\knowledge-assistant" (
-    echo Switching to main repository...
-    cd ..\knowledge-assistant
-)
-
-REM Check if in correct directory
-if not exist "scripts" (
-    echo Error: Not in main repository!
-    echo Please run this script when knowledge-assistant repo is available.
+REM Check if in correct directory (dev repo)
+if not exist "agents\data" (
+    echo Error: Not in dev repository!
+    echo Please run this script from knowledge-assistant-dev root.
     pause
     exit /b 1
 )
 
-REM Start OpenCode with Data agent
+REM Start OpenCode with Data Team
 opencode --agent data
 
 pause

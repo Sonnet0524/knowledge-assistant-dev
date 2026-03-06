@@ -1,30 +1,24 @@
 #!/bin/bash
 # ====================================
-# Data Agent Startup Script
+# Data Team Startup Script
 # ====================================
 
 echo ""
 echo "========================================"
-echo "  Data Agent - Data System"
+echo "  Data Team - Data System"
 echo "========================================"
 echo ""
-echo "Working Directory: knowledge-assistant"
+echo "Working Directory: knowledge-assistant-dev"
 echo ""
-echo "Starting Data Agent..."
+echo "Starting Data Team..."
 echo ""
 
-# Check if we need to switch to main repo
-if [ -d "../knowledge-assistant" ]; then
-    echo "Switching to main repository..."
-    cd ../knowledge-assistant
-fi
-
-# Check if in correct directory
-if [ ! -d "scripts" ]; then
-    echo "Error: Not in main repository!"
-    echo "Please run this script when knowledge-assistant repo is available."
+# Check if in correct directory (dev repo)
+if [ ! -d "agents/data" ]; then
+    echo "Error: Not in dev repository!"
+    echo "Please run this script from knowledge-assistant-dev root."
     exit 1
 fi
 
-# Start OpenCode with Data agent
+# Start OpenCode with Data Team
 opencode --agent data

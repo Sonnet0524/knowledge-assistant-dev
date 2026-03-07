@@ -1,0 +1,32 @@
+[
+  {
+    "path": "large1.md",
+    "content": "知识管理系统是一种信息技术系统，用于捕获、存储、检索和共享知识。在企业环境中，知识管理系统可以帮助员工快速找到所需信息，提高工作效率。一个好的知识管理系统应该具备以下特点：易于使用、搜索功能强大、支持多种文档格式、具有权限控制、支持协作编辑。随着人工智能技术的发展，现代知识管理系统开始集成智能搜索和语义分析功能，使得知识检索更加精准和高效。",
+    "metadata": {
+      "title": "知识管理系统设计",
+      "date": "2024-02-01",
+      "category": "system-design",
+      "tags": ["knowledge-management", "system", "design"]
+    }
+  },
+  {
+    "path": "large2.md",
+    "content": "向量数据库是专门用于存储和检索高维向量的数据库系统。与传统关系数据库不同，向量数据库优化了向量相似度搜索操作。常见的向量数据库包括FAISS、Milvus、Pinecone和Weaviate。这些数据库使用近似最近邻（ANN）算法来加速搜索，如HNSW、IVF和PQ。在知识管理系统中，向量数据库可以存储文档的语义向量表示，支持语义搜索和相似文档推荐。",
+    "metadata": {
+      "title": "向量数据库技术详解",
+      "date": "2024-02-02",
+      "category": "database",
+      "tags": ["vector-database", "faiss", "ann", "embeddings"]
+    }
+  },
+  {
+    "path": "large3.md",
+    "content": "文本嵌入是将文本转换为固定长度向量的技术。嵌入向量能够捕捉文本的语义信息，语义相似的文本在向量空间中距离更近。常用的文本嵌入模型包括Word2Vec、GloVe、BERT和Sentence-BERT。在中文场景下，BGE系列模型表现优异，特别是bge-small-zh-v1.5模型，具有体积小、速度快、效果好等优点。选择合适的嵌入模型需要考虑准确性、速度和资源占用之间的平衡。",
+    "metadata": {
+      "title": "文本嵌入模型选择指南",
+      "date": "2024-02-03",
+      "category": "ai",
+      "tags": ["embeddings", "nlp", "bert", "bge"]
+    }
+  }
+]

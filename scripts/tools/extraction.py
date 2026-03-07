@@ -71,6 +71,48 @@ def extract_keywords(
         return _extract_keywords_textrank(text, top_n)
 
 
+def _is_stop_word(word: str) -> bool:
+    """
+    Check if a word is a stop word.
+    
+    Args:
+        word: Word to check
+    
+    Returns:
+        True if word is a stop word, False otherwise
+    """
+    stop_words = {
+        '的', '了', '在', '是', '我', '有', '和', '就', '不', '人',
+        '都', '一', '一个', '上', '也', '很', '到', '说', '要', '去',
+        '你', '会', '着', '没有', '看', '好', '自己', '这', '那',
+        'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to',
+        'for', 'of', 'with', 'by', 'from', 'as', 'is', 'was', 'are',
+        'were', 'been', 'be', 'have', 'has', 'had', 'do', 'does', 'did',
+        'will', 'would', 'could', 'should', 'may', 'might', 'must'
+    }
+    
+    return word.lower() in stop_words
+
+
+def _is_valid_word(word: str) -> bool:
+    """
+    Check if a word is valid (contains letters or Chinese characters).
+    
+    Args:
+        word: Word to check
+    
+    Returns:
+        True if word is valid, False otherwise
+    """
+    if not word or word.isspace():
+        return False
+    
+    has_letter = any(c.isalpha() for c in word)
+    has_chinese = any('\u4e00' <= c <= '\u9fff' for c in word)
+    
+    return has_letter or has_chinese
+
+
 def _extract_keywords_tfidf(text: str, top_n: int) -> List[Dict[str, Any]]:
     """
     Extract keywords using TF-IDF method.
@@ -87,7 +129,7 @@ def _extract_keywords_tfidf(text: str, top_n: int) -> List[Dict[str, Any]]:
     filtered_words = [
         word.lower().strip()
         for word in words
-        if len(word.strip()) > 1 and not word.isspace() and not _is_stop_word(word)
+        if len(word.strip()) > 1 and not word.isspace() and not _is_stop_word(word) and _is_valid_word(word)
     ]
     
     if not filtered_words:
@@ -96,14 +138,16 @@ def _extract_keywords_tfidf(text: str, top_n: int) -> List[Dict[str, Any]]:
     word_freq = Counter(filtered_words)
     total_words = len(filtered_words)
     
+    processed_text = ' '.join(filtered_words)
+    
     vectorizer = TfidfVectorizer(
-        tokenizer=lambda x: jieba.lcut(x),
-        lowercase=True,
-        max_features=100
+        lowercase=False,
+        max_features=100,
+        token_pattern=r'(?u)\b\w+\b'
     )
     
     try:
-        tfidf_matrix = vectorizer.fit_transform([text])
+        tfidf_matrix = vectorizer.fit_transform([processed_text])
         feature_names = vectorizer.get_feature_names_out()
         tfidf_scores = tfidf_matrix.toarray()[0]
         
@@ -380,26 +424,3 @@ def _score_sentences(sentences: List[str]) -> Dict[str, float]:
             sentence: len(sentence) / max_len
             for sentence in sentences
         }
-
-
-def _is_stop_word(word: str) -> bool:
-    """
-    Check if a word is a stop word.
-    
-    Args:
-        word: Word to check
-    
-    Returns:
-        True if word is a stop word, False otherwise
-    """
-    stop_words = {
-        '的', '了', '在', '是', '我', '有', '和', '就', '不', '人',
-        '都', '一', '一个', '上', '也', '很', '到', '说', '要', '去',
-        '你', '会', '着', '没有', '看', '好', '自己', '这', '那',
-        'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to',
-        'for', 'of', 'with', 'by', 'from', 'as', 'is', 'was', 'are',
-        'were', 'been', 'be', 'have', 'has', 'had', 'do', 'does', 'did',
-        'will', 'would', 'could', 'should', 'may', 'might', 'must'
-    }
-    
-    return word.lower() in stop_words

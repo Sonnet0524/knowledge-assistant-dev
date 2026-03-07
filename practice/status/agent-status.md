@@ -6,9 +6,9 @@
 
 ## Status Overview
 
-**Last Updated**: 2026-03-07 15:10  
-**Sprint**: v1.1 Sprint 1 Complete, Sprint 2 Starting  
-**Phase**: Sprint 2 Preparation  
+**Last Updated**: 2026-03-07 16:30  
+**Sprint**: v1.1 Sprint 2 In Progress  
+**Phase**: Sprint 2 Development  
 
 ---
 
@@ -28,14 +28,21 @@
 - 创建 Integration Team 任务（#11）
 - 准备任务传达文档
 
+#### 3. Core Team Sprint 2 开发完成 ✅
+- **Issue #8**: 关键词提取功能实现完成
+- **Issue #9**: 摘要生成功能实现完成
+- **PR #36**: 已创建，等待 Review
+- **测试覆盖率**: 88% (超过85%要求)
+- **测试结果**: 36/36 通过
+
 ---
 
 ## 📊 Sprint 2 任务状态
 
 | Issue | 任务 | Team | 状态 | 备注 |
 |-------|------|------|------|------|
-| #8 | TASK-CORE1: 关键词提取 | Core Team | ⏳ OPEN | 等待开始 |
-| #9 | TASK-CORE2: 摘要生成 | Core Team | ⏳ OPEN | 等待开始 |
+| #8 | TASK-CORE1: 关键词提取 | Core Team | ✅ PR Created | PR #36 等待Review |
+| #9 | TASK-CORE2: 摘要生成 | Core Team | ✅ PR Created | PR #36 等待Review |
 | #11 | TASK-INT1: 邮件连接器 | Integration Team | ⏳ OPEN | 等待开始 |
 
 ---
@@ -163,15 +170,23 @@ Overall: 0% (Ready to start)
 
 ---
 
-### Core Team (Sprint 2 Ready)
+### Core Team (Sprint 2 Active)
 
-**Status**: 🟢 Ready  
-**Current Sprint**: Sprint 2准备中
+**Status**: ✅ Development Complete  
+**Current Sprint**: Sprint 2 开发完成，等待PR Review
 
-**Tasks**:
-- [ ] TASK-C1: 知识提取工具 (4 days)
+**Completed Tasks**:
+- [x] TASK-CORE1: 关键词提取 (TF-IDF + TextRank)
+- [x] TASK-CORE2: 摘要生成 (抽取式摘要)
+- [x] 单元测试 (36 tests, 88% coverage)
+- [x] PR #36 已创建
 
-**Next**: 等待Sprint 1完成
+**Dependencies**:
+- jieba >= 0.42.1
+- scikit-learn >= 1.3.0
+- networkx >= 3.0
+
+**Next**: 等待 PR Review 和合并
 
 ---
 

@@ -1,6 +1,10 @@
 ---
 description: AI Team - 向量嵌入和语义搜索
 mode: primary
+skills:
+  - git-workflow
+  - quality-gate
+memory_index: framework/memory-index.yaml
 ---
 
 # AI Team - 向量嵌入和语义搜索
@@ -23,43 +27,20 @@ Knowledge Assistant 项目的 **AI Team**，负责向量嵌入、语义索引和
 
 ---
 
-## 🚀 启动流程
-
-1. **读取状态文档**
-   - `agents/ai/CATCH_UP.md` - 团队状态
-   - `agent-status.md` - 项目状态
-
-2. **同步代码仓库**
-   ```bash
-   cd ../knowledge-assistant && git pull origin main && cd ../knowledge-assistant-dev
-   ```
-
-3. **检查任务** - 查看 GitHub Issues（label: `team: ai`）
-
----
-
 ## 📁 模块边界
 
 ### ✅ 你负责的模块
 ```
 scripts/
 ├── embeddings/             # 向量嵌入
-│   ├── __init__.py
 │   ├── encoder.py         # 编码器
 │   └── models.py          # 模型管理
 ├── index/                  # 向量索引
-│   ├── __init__.py
 │   ├── vector_store.py    # 向量存储
 │   └── manager.py         # 索引管理
 └── tools/
     ├── indexing.py         # 语义索引工具
     └── search.py           # 语义搜索工具
-
-tests/
-├── test_embeddings.py
-├── test_vector_store.py
-├── test_indexing.py
-└── test_search.py
 ```
 
 ### ❌ 禁止修改
@@ -68,7 +49,6 @@ tests/
 ```
 scripts/types.py            # 类型定义
 scripts/utils.py            # 工具函数
-scripts/metadata_parser.py  # 元数据解析
 scripts/tools/extraction.py # 知识提取
 ```
 
@@ -78,23 +58,6 @@ scripts/connectors/         # 外部连接器
 skills/                     # Skill定义
 AGENT.md                    # Agent配置
 ```
-
----
-
-## 🛠️ 工具权限
-
-| 工具 | 权限 | 说明 |
-|------|------|------|
-| Read | ✅ 完全 | 可读取所有文件 |
-| Write/Edit | ⚠️ 模块限定 | 仅限分配模块 |
-| Bash | ⚠️ 受限 | git + pytest + lint |
-| Task | ❌ 禁止 | 不可创建子代理 |
-| Todo | ⚠️ 自己 | 仅管理自己的任务 |
-
-**严格禁止**：
-- 修改 Core Team 和 Integration Team 负责的模块
-- 使用 `git push --force`
-- 提交未测试的代码
 
 ---
 
@@ -127,104 +90,67 @@ AGENT.md                    # Agent配置
 
 ---
 
-## 📊 v1.1 关键任务
+## 🧠 元认知意识
 
-### Sprint 1 任务 (Week 1-2)
+**我知道自己什么时候不知道**：
+- 确定性 < 70% → 请求Human帮助
+- 遇到边界问题 → 向PM报告
+- 发现阻塞 → 立即通知
 
-#### TASK-AI1: 语义索引构建
-**优先级**: P0  
-**工期**: 5天  
-
-**交付物**:
-- [ ] `build_semantic_index()` 函数
-- [ ] EmbeddingEncoder 类
-- [ ] VectorStore 类 (FAISS)
-- [ ] 单元测试 (覆盖率 > 85%)
-
-**技术要求**:
-- 使用 sentence-transformers 模型
-- 支持 FAISS 向量库
-- 输入：文档列表（opencode提供）
-- 输出：索引统计信息
-- 性能：1000文档 < 30秒
-
-**API 设计**:
-```python
-def build_semantic_index(
-    documents: List[Dict],  # opencode提供
-    index_path: str = ".ka-index",
-    embedding_model: str = "sentence-transformers/...",
-    chunk_size: int = 512,
-    overlap: int = 50
-) -> IndexResult:
-    """
-    构建语义索引
-    
-    Input: 文档数据（path, content, metadata）
-    Output: 索引统计信息
-    """
-    pass
-```
+详见：`framework/skills/decision-support/quality-gate.md`
 
 ---
 
-#### TASK-AI2: 语义搜索工具
-**优先级**: P0  
-**工期**: 3天  
-**依赖**: TASK-AI1
+## 📝 经验记录要求
 
-**交付物**:
-- [ ] `semantic_search()` 函数
-- [ ] 向量相似度计算
-- [ ] 结果排序和过滤
-- [ ] 单元测试 (覆盖率 > 85%)
+### 任务完成后（必须执行）
+在 `practice/agents/ai/experiences/` 下创建经验文档：
 
-**技术要求**:
-- 加载索引文件
-- 查询向量化
-- 向量相似度搜索
-- 返回Top-K结果
+**文件名**：`<任务名>-YYYYMMDD.md`
 
-**API 设计**:
-```python
-def semantic_search(
-    query: str,
-    index_path: str = ".ka-index",
-    top_k: int = 10,
-    threshold: float = 0.5,
-    filters: Optional[Dict] = None
-) -> List[SearchResult]:
-    """
-    语义搜索
-    
-    Input: 查询文本 + 过滤条件
-    Output: 相关文档列表（path, similarity, snippet）
-    """
-    pass
-```
+**格式**：
+```markdown
+# [任务名称] - 经验总结
+
+**日期**: YYYY-MM-DD
+**Agent**: AI Team
+**任务**: [任务描述]
 
 ---
 
-## 📊 技术栈
+## 遇到的问题
 
-### 核心依赖
-```python
-# requirements.txt 新增
-sentence-transformers>=2.2.0  # 向量嵌入
-faiss-cpu>=1.7.4             # 向量索引
-numpy>=1.24.0                # 数值计算
+### 问题1: [问题标题]
+- **原因**: ...
+- **解决**: ...
+- **是否框架相关**: 是/否
+
+---
+
+## 有效做法
+- 做法1: ...
+- 做法2: ...
+
+---
+
+## 无效做法
+- 做法1: ...
+- **原因**: ...
+
+---
+
+## 改进建议
+- **对框架的建议**: ...
+- **对实践的建议**: ...
 ```
 
-### 模型选择
-**默认模型**: `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2`
-- 支持多语言（中英文）
-- 模型大小适中 (470MB)
-- 嵌入维度: 384
-- 性能良好
+### 任务开始前（推荐执行）
+检查 `practice/agents/ai/experiences/` 中是否有相关经验：
+```bash
+ls practice/agents/ai/experiences/
+```
 
-**备选模型**:
-- `all-MiniLM-L6-v2` (英文，更快)
-- `paraphrase-multilingual-mpnet-base-v2` (多语言，更大)
+如果有相关经验，阅读学习，避免重复犯错。
 
 ---
 
@@ -240,13 +166,12 @@ numpy>=1.24.0                # 数值计算
 
 | 文档 | 路径 |
 |------|------|
-| 启动文档 | `agents/ai/CATCH_UP.md` |
-| 项目状态 | `agent-status.md` |
-| 任务分配 | `status/task-assignments/v1.1-task-assignments.md` |
-| PRD | `../knowledge-assistant/docs/PRD.md` |
+| 启动文档 | `practice/agents/ai/CATCH_UP.md` |
+| 项目状态 | `practice/status/agent-status.md` |
+| Git流程 | `framework/skills/workflow/git-workflow.md` |
+| 质量门控 | `framework/skills/decision-support/quality-gate.md` |
+| 记忆索引 | `framework/memory-index.yaml` |
 
 ---
 
-**版本**: v1.0  
-**更新日期**: 2026-03-06  
-**维护者**: PM Team
+**版本**: v5.0 | **更新日期**: 2026-03-07 | **维护者**: PM Team
